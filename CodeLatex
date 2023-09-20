@@ -1,0 +1,311 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template 
+%Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.tex}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.tex}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{MANAN PUROHIT}
+\tagline{DATA ANALYST}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \textcolor{GoldenEarth}{\textbf{\email{mananpurohit.work@gmail.com}}} 
+  \textcolor{GoldenEarth}{\textbf{\phone{9001497323}}} 
+  \textcolor{GoldenEarth}{\textbf{\location{Jaipur, Rajasthan}}} 
+  \textcolor{GoldenEarth}{\textbf{\linkedin{mananpurohit11/}}} 
+  \textcolor{GoldenEarth}{\textbf{\github{Mananpurohit1}}} 
+  % Add Kaggle and HackerRank
+  \textcolor{GoldenEarth}{\textbf{\printinfo{\faKaggle}{\href{https://www.kaggle.com/mananpurohit18}{mananpurohit18}}}} 
+  \textcolor{GoldenEarth}{\textbf{\printinfo{\faCode}{\href{https://www.hackerrank.com/purohitmanan18}{purohitmanan18}}}}.
+}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Objective}
+
+\begin{quote}
+``Data Analyst skilled with \textcolor{PastelRed}{\textbf{Python}},\textcolor{PastelRed}{\textbf{SQL}} and Data visualization in turning data into actionable insights, Strong collaborator and strategic thinker.''
+\end{quote}
+
+
+
+
+\cvsection{Projects}
+
+\cvevent{Airbnb NYC Demand Area Analysis}{Airbnb Dataset}{}{}
+\begin{itemize}
+\item  Python data analysis tools, uncovering insights from complex datasets. Utilizes data to identify high-demand areas and formulate effective marketing strategies.
+\end{itemize}
+\begin{itemize}
+\item This analysis wields Python's powerful tools, including numpy,
+pandas, matplotlib, and seaborn, to unravel the hidden gems
+within the data.
+\end{itemize}
+\divider
+
+
+\cvevent{Marketing and Sales Optimization}{PublicStores Dataset}{}{}
+\begin{itemize}
+\item  Python to analyze sales data and identify the top-selling
+product categories and individual products, leading to improved
+inventory planning and increased customer satisfaction.
+\end{itemize}
+\begin{itemize}
+\item Performed exploratory data analysis using pandas, matplotlib,
+and seaborn to uncover patterns, distributions, and relationships
+within the sales dataset, providing valuable insights for marketing
+strategy.
+\end{itemize}
+
+
+\divider
+
+
+
+\cvevent{Amazon Product Analytics}{Web Scraping}{}{}
+\begin{itemize}
+\item Proficiently utilized BeautifulSoup and requests libraries for
+dynamic web scraping of PlayStation 5 product information from
+Amazon.
+\end{itemize}
+\begin{itemize}
+\item Data Cleaning and Structuring techniques to ensure accurate
+extraction and structuring of product details into a Pandas
+DataFrame for in-depth market analysis.
+\end{itemize}
+
+\divider
+
+
+
+\cvevent{Customer Churn Analysis}{Bank Credit/Debit Dataset}{}{}
+\begin{itemize}
+\item identifying trends and patterns related to customer churn.
+Using data visualization and statistical analysis.
+
+\end{itemize}
+\begin{itemize}
+\item Through Exploratory Data Analysis techniques such as
+histograms, scatter plots, and correlation analysis to uncover
+information.
+\end{itemize}
+\divider
+
+\medskip
+
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+
+
+
+\switchcolumn
+
+\cvsection{Certifications}
+
+\cvachievement{\faTrophy}{\bfseries{IBM : Data Science Professional Certificate}}{Coursera}
+
+\divider
+
+
+
+
+\cvsection{Education}
+
+\cvevent{Swami Keshvanand Institute of Technology}{B.Tech, E.C.E}
+{Jul 2019 -- Jul 2023}{}
+
+\divider
+
+\cvevent{St. Anthony's Senior Secondary School}{PCM, AISSCE CBSE}
+{Feb 2018 -- Feb 2019}{}
+
+\divider
+
+\cvevent{Ryan International School}{AISSE, CBSE}
+{Mar 2016 -- Mar 2017}{}
+
+\cvsection{SKILLS}
+
+\cvtag{Python}
+\cvtag{SQL}
+\cvtag{MySQL}
+\cvtag{Excel}\\
+
+\divider\smallskip
+
+\cvtag{Statistical Analysis}
+\cvtag{PowerBi}
+\cvtag{Latex}\\
+
+
+
+\cvsection{Libraries}
+
+\cvtag{Pandas}
+\cvtag{Numphy}
+\cvtag{Matplotlib}\\
+
+\divider\smallskip
+
+\cvtag{BeautifulSoup}
+\cvtag{Seaborn}
+\cvtag{Sklearn}\\
+
+
+\cvsection{Hackerrank}
+
+\cvskill{SQL}{5}
+\divider
+
+\cvskill{Python}{3}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+
+% \divider
+\cvsection{Extra-Curricluar }
+
+
+\cvtag{Guitarist}
+\cvtag{Chess}
+\cvtag{Books}\\
+
+\divider\smallskip
+
+\cvtag{Swimming}
+\cvtag{Badminton}
+\cvtag{Traipse}\\
+
+
+
+\end{paracol}
+
+
+\end{document}
