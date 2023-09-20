@@ -1,4 +1,4 @@
-# GitHub Repository Description
+# LaTeX Repository 
 
 ## LaTeX Resume Portfolio
 Welcome to my LaTeX Resume Portfolio repository! This repository is dedicated to showcasing my professional resume, meticulously crafted using LaTeX—a versatile typesetting system known for its precision and flexibility. Here, I not only present my resume but also provide insights into the methods employed to create it.
